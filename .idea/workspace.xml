@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="944d1627-10d0-4f88-a00f-5ca1438c578b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_10_16_144858_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_16_144858_create_products_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Dashboard/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Dashboard/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/PublicItems.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/PublicItems.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="944d1627-10d0-4f88-a00f-5ca1438c578b" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +178,7 @@
       <workItem from="1570984069673" duration="17781000" />
       <workItem from="1571209632281" duration="27784000" />
       <workItem from="1571403573197" duration="66921000" />
-      <workItem from="1572028202434" duration="4587000" />
+      <workItem from="1572028202434" duration="5117000" />
     </task>
     <servers />
   </component>
