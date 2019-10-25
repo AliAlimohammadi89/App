@@ -194,10 +194,19 @@
                         </li>
 
                         <li class="nav-item">
-                            <a   href="{{ route('Categories.index') }}" class="nav-link">
+                            <a    href="{{ route('Categories.index') }}" class="nav-link">
                                 <i class="fas fa-layer-group"></i>
                                 <p>
                                     مجموعه ها
+
+                                </p>
+                            </a>
+                        </li>
+                  <li class="nav-item">
+                            <a    href="{{ route('Experts.index') }}" class="nav-link">
+                                <i class="fas fa-layer-group"></i>
+                                <p>
+                                   متخصصین
 
                                 </p>
                             </a>

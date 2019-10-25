@@ -17,4 +17,11 @@ class Product extends Model
 
     }
 
+    public function Experts(){
+
+
+        return $this->belongsToMany(Expert::class);
+
+    }
+
 }

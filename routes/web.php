@@ -27,6 +27,7 @@ Route::get('/Admin', 'Admin\PanelController@index')->name('home') ;
 //Route::post('Admin/Category/Store', 'Admin\CategoryController@store')->name('CategoryStore');
 Route::resource('Categories', 'Admin\CategoryController');
 Route::resource('Products', 'Admin\ProductController');
+Route::resource('Experts', 'Admin\ExpertController');
  //Route::get('Admin/Category/Store', 'Admin\CategoryController@store')->name('CategoryStore');
 //Route::get('/Product', 'Admin\ProductController@index')->name('Product');
 //Route::get('Admin/Product/Create', 'Admin\ProductController@create')->name('ProductCreate');

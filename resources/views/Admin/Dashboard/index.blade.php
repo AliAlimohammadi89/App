@@ -21,7 +21,7 @@
                                 print $p;
                                 ?></h3>
 
-                            <p>محصولات</p>
+                            <p>زیر مجموعه ها </p>
                         </div>
                         <div class="icon">
                             <i class="fab fa-product-hunt"></i>
@@ -54,14 +54,19 @@
                     <!-- small box -->
                     <div class="small-box bg-warning">
                         <div class="inner">
-                            <h3>44</h3>
+                            <h3><?PHP
+                                $p =\App\Expert::all()->count();
+                                print $p;
+                                ?>
+                            </h3>
 
-                            <p>کاربران ثبت شده</p>
+                            <p> متخصصین </p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-person-add"></i>
                         </div>
-                        <a href="#" class="small-box-footer">اطلاعات بیشتر <i class="fa fa-arrow-circle-left"></i></a>
+
+                        <a href="{{ route('Experts.index') }}" class="small-box-footer">اطلاعات بیشتر <i class="fa fa-arrow-circle-left"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->

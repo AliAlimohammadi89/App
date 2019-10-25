@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="944d1627-10d0-4f88-a00f-5ca1438c578b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_10_16_144858_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_16_144858_create_products_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Dashboard/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Dashboard/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Admin/PublicItems.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/PublicItems.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -137,16 +141,16 @@
     <property name="nodejs_package_manager_path" value="yarn" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\reeact-native\LaravelReact-native\reactproject\resources\views\Admin\Product" />
-      <recent name="D:\reeact-native\LaravelReact-native\reactproject\resources\views\Admin\Category" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\reeact-native\LaravelReact-native\reactproject\public\images\Products" />
       <recent name="D:\reeact-native\LaravelReact-native\reactproject\public\images" />
       <recent name="D:\reeact-native\LaravelReact-native\reactproject\storage\app\public\images2" />
       <recent name="D:\reeact-native\LaravelReact-native\reactproject\resources\views\Admin" />
       <recent name="D:\reeact-native\LaravelReact-native\reactproject\resources\views" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\reeact-native\LaravelReact-native\reactproject\resources\views\Admin\Product" />
+      <recent name="D:\reeact-native\LaravelReact-native\reactproject\resources\views\Admin\Category" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -180,7 +184,8 @@
       <workItem from="1570719358728" duration="1883000" />
       <workItem from="1570984069673" duration="17781000" />
       <workItem from="1571209632281" duration="27784000" />
-      <workItem from="1571403573197" duration="66907000" />
+      <workItem from="1571403573197" duration="66921000" />
+      <workItem from="1572028202434" duration="4587000" />
     </task>
     <servers />
   </component>
@@ -192,7 +197,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

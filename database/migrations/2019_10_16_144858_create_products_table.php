@@ -14,20 +14,20 @@ class CreateProductsTable extends Migration
     public function up()
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('title');
             $table->string('description');
             $table->string('image');
             $table->string('price');
-//            $table->timestamp();
+            $table->timestamps();
 
         });
         Schema::create('categories', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('title');
             $table->string('description');
             $table->string('image');
-//            $table->timestamp();
+            $table->timestamps();
         });
 
 
