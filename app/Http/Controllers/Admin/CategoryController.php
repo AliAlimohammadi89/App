@@ -131,7 +131,7 @@ class CategoryController extends Controller
      *
      * @param \Illuminate\Http\Request $request
      * @param \App\Category $category
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, $id)
     {

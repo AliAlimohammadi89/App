@@ -54,7 +54,9 @@
                     <a href="#" class="dropdown-item">
                         <!-- Message Start -->
                         <div class="media">
-                            <img src="https://scontent-mrs2-1.cdninstagram.com/vp/872160308e0473c7e586d9267dd84933/5E3F3B8F/t51.2885-19/s320x320/68990983_1588038371330516_2478226495210782720_n.jpg?_nc_ht=scontent-mrs2-1.cdninstagram.com" alt="User Avatar" class="img-size-50 ml-3 img-circle">
+                            <img
+                                src="https://scontent-mrs2-1.cdninstagram.com/vp/872160308e0473c7e586d9267dd84933/5E3F3B8F/t51.2885-19/s320x320/68990983_1588038371330516_2478226495210782720_n.jpg?_nc_ht=scontent-mrs2-1.cdninstagram.com"
+                                alt="User Avatar" class="img-size-50 ml-3 img-circle">
                             <div class="media-body">
                                 <h3 class="dropdown-item-title">
                                     علی علی محمدی
@@ -70,7 +72,9 @@
                     <a href="#" class="dropdown-item">
                         <!-- Message Start -->
                         <div class="media">
-                            <img src="dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle ml-3">
+                            <img
+                                src="https://scontent-mrs2-1.cdninstagram.com/vp/872160308e0473c7e586d9267dd84933/5E3F3B8F/t51.2885-19/s320x320/68990983_1588038371330516_2478226495210782720_n.jpg?_nc_ht=scontent-mrs2-1.cdninstagram.com"
+                                alt="User Avatar" class="img-size-50 img-circle ml-3">
                             <div class="media-body">
                                 <h3 class="dropdown-item-title">
                                     پیمان احمدی
@@ -86,7 +90,9 @@
                     <a href="#" class="dropdown-item">
                         <!-- Message Start -->
                         <div class="media">
-                            <img src="dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle ml-3">
+                            <img
+                                src="https://scontent-mrs2-1.cdninstagram.com/vp/872160308e0473c7e586d9267dd84933/5E3F3B8F/t51.2885-19/s320x320/68990983_1588038371330516_2478226495210782720_n.jpg?_nc_ht=scontent-mrs2-1.cdninstagram.com"
+                                alt="User Avatar" class="img-size-50 img-circle ml-3">
                             <div class="media-body">
                                 <h3 class="dropdown-item-title">
                                     سارا وکیلی
@@ -104,7 +110,7 @@
             </li>
             <!-- Notifications Dropdown Menu -->
             <li class="nav-item dropdown">
-                <a class="nav-link" data-toggle="dropdown" href="#">
+                <a class="nav-link" data-toggle="dropdown" hrحاح ef="#">
                     <i class="fa fa-bell-o"></i>
                     <span class="badge badge-warning navbar-badge">15</span>
                 </a>
@@ -153,8 +159,9 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="https://scontent-mrs2-1.cdninstagram.com/vp/872160308e0473c7e586d9267dd84933/5E3F3B8F/t51.2885-19/s320x320/68990983_1588038371330516_2478226495210782720_n.jpg?_nc_ht=scontent-mrs2-1.cdninstagram.com"
-                             class="img-circle elevation-2" alt="User Image">
+                        <img
+                            src="https://scontent-mrs2-1.cdninstagram.com/vp/872160308e0473c7e586d9267dd84933/5E3F3B8F/t51.2885-19/s320x320/68990983_1588038371330516_2478226495210782720_n.jpg?_nc_ht=scontent-mrs2-1.cdninstagram.com"
+                            class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
                         <a href="#" class="d-block">علی علی محمدی</a>
@@ -194,7 +201,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a    href="{{ route('Categories.index') }}" class="nav-link">
+                            <a href="{{ route('Categories.index') }}" class="nav-link">
                                 <i class="fas fa-layer-group"></i>
                                 <p>
                                     مجموعه ها
@@ -202,17 +209,17 @@
                                 </p>
                             </a>
                         </li>
-                  <li class="nav-item">
-                            <a    href="{{ route('Experts.index') }}" class="nav-link">
-                                <i class="fas fa-layer-group"></i>
+                        <li class="nav-item">
+                            <a href="{{ route('Experts.index') }}" class="nav-link">
+                                <i class="fas fa-users-cog"></i>
                                 <p>
-                                   متخصصین
+                                    متخصصین
 
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('Customers.index') }}" class="nav-link">
                                 <i class="fas fa-users"></i>
                                 <p>
                                     کاربران
@@ -220,6 +227,7 @@
                                 </p>
                             </a>
                         </li>
+
 
                     </ul>
                 </nav>

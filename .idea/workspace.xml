@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="944d1627-10d0-4f88-a00f-5ca1438c578b" name="Default Changelist" comment="" />
+    <list default="true" id="944d1627-10d0-4f88-a00f-5ca1438c578b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Customer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CustomerController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Admin/Customer/Create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Admin/Customer/Edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Admin/Customer/Index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Dashboard/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Dashboard/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/PublicItems.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/PublicItems.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +141,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/Admin/Product" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/Admin" />
     <property name="nodejs_package_manager_path" value="yarn" />
   </component>
   <component name="RecentsManager">
@@ -142,6 +153,9 @@
       <recent name="D:\reeact-native\LaravelReact-native\reactproject\resources\views" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\reeact-native\LaravelReact-native\reactproject\resources\views\Admin" />
+      <recent name="D:\reeact-native\LaravelReact-native\reactproject\app" />
+      <recent name="D:\reeact-native\LaravelReact-native\reactproject\app\Http\Controllers\Admin" />
       <recent name="D:\reeact-native\LaravelReact-native\reactproject\resources\views\Admin\Product" />
       <recent name="D:\reeact-native\LaravelReact-native\reactproject\resources\views\Admin\Category" />
     </key>
@@ -178,7 +192,7 @@
       <workItem from="1570984069673" duration="17781000" />
       <workItem from="1571209632281" duration="27784000" />
       <workItem from="1571403573197" duration="66921000" />
-      <workItem from="1572028202434" duration="5117000" />
+      <workItem from="1572028202434" duration="15021000" />
     </task>
     <servers />
   </component>
