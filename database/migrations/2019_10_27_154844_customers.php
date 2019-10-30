@@ -20,7 +20,7 @@ class Customers extends Migration
             $table->string('Address')->nullable();
             $table->string('Lat')->nullable();
             $table->string('Long')->nullable();
-            $table->string('Phone_Number')->index();
+            $table->string('Phone_Number')->index()->unique();
             $table->string('Pass')->nullable();
             $table->string('Email')->nullable();
              $table->string('image')->nullable();

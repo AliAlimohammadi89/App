@@ -34,8 +34,9 @@
                             <thead>
                             <tr>
                                 <th>-</th>
-                                <th>عنوان مجموعه</th>
-                                <th>توضیحات</th>
+                                <th>نام</th>
+                                <th>فامیلی</th>
+                                <th>شماره</th>
                                 <th>تصویر</th>
                                 <th>مجموعه ها</th>
                                 <th>امتیاز</th>
@@ -71,9 +72,12 @@
                                         </div>
                                     </td>
 
-                                    <td>{{$Expert->title}}</td>
+                                    <td>{{$Expert->First_Name}}</td>
                                     <td>
-                                        {{$Expert->description}}
+                                        {{$Expert->Last_Name}}
+                                    </td>
+                                    <td>
+                                        {{$Expert->Phone_Number}}
                                     </td>
                                     <td>
                                         <div class="widget-user-image">
@@ -97,8 +101,10 @@
                             </tbody>
                             <tfoot>
                             <tr>
-                                <th>عنوان</th>
-                                <th>توضیحات</th>
+                                <th>-</th>
+                                <th>نام</th>
+                                <th>فامیلی</th>
+                                <th>شماره</th>
                                 <th>تصویر</th>
                                 <th>مجموعه ها</th>
                                 <th>امتیاز</th>

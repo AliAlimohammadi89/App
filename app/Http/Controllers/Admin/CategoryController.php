@@ -4,17 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Category;
 use App\Http\Controllers\Controller;
-
-
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Route;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Redirect;
-
-use Illuminate\Support\Facades\View;
-
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Redirect;
 use Intervention\Image\Facades\Image;
 
 
@@ -24,7 +18,7 @@ class CategoryController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index()
     {
@@ -35,7 +29,7 @@ class CategoryController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function create()
     {
@@ -47,8 +41,8 @@ class CategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return Response
      */
     public function store(Request $request)
     {
@@ -67,7 +61,7 @@ class CategoryController extends Controller
 
 
         //   dd($cover,$request);
-        $extension = $cover->getClientOriginalExtension()?$cover->getClientOriginalExtension():"";
+        $extension = $cover->getClientOriginalExtension() ? $cover->getClientOriginalExtension() : "";
 
 
         $resultCreate = Category::create([
@@ -93,8 +87,8 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param \App\Category $category
-     * @return \Illuminate\Http\Response
+     * @param Category $category
+     * @return Response
      */
     public function show(Category $category)
     {
@@ -104,8 +98,8 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param \App\Category $category
-     * @return \Illuminate\Http\Response
+     * @param Category $category
+     * @return Response
      */
     public function edit($categoryID)
     {
@@ -129,9 +123,9 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Category $category
-     * @return \Illuminate\Http\RedirectResponse
+     * @param Request $request
+     * @param Category $category
+     * @return RedirectResponse
      */
     public function update(Request $request, $id)
     {
@@ -140,31 +134,42 @@ class CategoryController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'image' => 'required',
 
         ]);
-        $cover = $request->file('image');
-        $extension = $cover->getClientOriginalExtension()?$cover->getClientOriginalExtension():"";
 
-        $update = ['title' => $request->title, 'description' => $request->description, 'image' =>$extension];
+
+        if ($request->file('image')) {
+
+//            $cover = $request->file('image');
+//            $extension = $request->file('image')->getClientOriginalExtension() ? $cover->getClientOriginalExtension() : "";
+
+            $update = [
+                'title' => $request->title,
+                'description' => $request->description,
+                'image' => $request->file('image')->getClientOriginalExtension(),
+            ];
+
+        } else {
+            $update = [
+                'title' => $request->title,
+                'description' => $request->description,
+
+            ];
+
+        }
         Category::where('id', $id)->update($update);
 
 
-
-
-
-        if ($cover) {
-            $originalImage = $cover;
+        if ($request->file('image')) {
+            $originalImage = $request->file('image');
             $thumbnailImage = Image::make($originalImage);
             $thumbnailPath = public_path() . '/images/Categories/';
             $thumbnailImage->resize(200, 200);
-            $thumbnailImage->save($thumbnailPath . 'Category_' . $id . '.' . $extension);
+            $thumbnailImage->save($thumbnailPath . 'Category_' . $id . '.' . $request->file('image')->getClientOriginalExtension());
 //            dd($originalImage, $thumbnailImage);
 //            $p = Storage::disk('public')->put('/images2/category_' . $resultCreate->id . '.' . $extension, File::get($cover));
             //  dd($request->all());
         }
-
-
 
 
         return Redirect::to('Categories')
@@ -177,8 +182,8 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Category $category
-     * @return \Illuminate\Http\RedirectResponse
+     * @param Category $category
+     * @return RedirectResponse
      */
     public function destroy($categoryID)
     {
@@ -195,8 +200,6 @@ class CategoryController extends Controller
 
 
         File::delete($thumbnailPath);
-
-
 
 
         return Redirect::to('Categories')

@@ -194,7 +194,7 @@
                                 <i class="fab fa-product-hunt"></i>
 
                                 <p>
-                                    محصولات
+                                    خدمات
 
                                 </p>
                             </a>

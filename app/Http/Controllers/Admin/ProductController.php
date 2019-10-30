@@ -4,10 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Product;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 
 
@@ -16,7 +17,7 @@ class ProductController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index()
     {
@@ -27,7 +28,7 @@ class ProductController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function create()
     {
@@ -37,8 +38,8 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return Response
      */
     public function store(Request $request)
     {
@@ -48,7 +49,9 @@ class ProductController extends Controller
         $categories = $request->input('category');
 //
 //        unset($request['category']);
-//        // dd($categories,$request->all());
+        $SpecialtyFields = json_encode($request->input('SpecialtyFields'));
+
+        //   dd($categories,$request->all(),$request->input(),$SpecialtyFields);
 //
 //
 //
@@ -77,18 +80,14 @@ class ProductController extends Controller
         //  dd($cover,$request);
         $extension = $cover->getClientOriginalExtension() ? $cover->getClientOriginalExtension() : "";
 
-
+        $SpecialtyFields = json_encode($request->input('SpecialtyFields'));
         $resultCreate = Product::create([
             "title" => $request->title,
             "description" => $request->description,
             "image" => $extension,
-            "price" => $request->price
-
+            "SpecialtyFields" => $SpecialtyFields,
         ]);
-
         $resultCreate->categories()->attach($categories);
-
-
         if ($cover) {
             $originalImage = $cover;
             $thumbnailImage = Image::make($originalImage);
@@ -110,8 +109,8 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param \App\Product $product
-     * @return \Illuminate\Http\Response
+     * @param Product $product
+     * @return Response
      */
     public function show(Product $product)
     {
@@ -122,7 +121,7 @@ class ProductController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param $categoryID
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function edit($categoryID)
     {
@@ -145,16 +144,15 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Product $product
-     * @return \Illuminate\Http\RedirectResponse
+     * @param Request $request
+     * @param Product $product
+     * @return RedirectResponse
      */
     public function update(Request $request, $id)
     {
         $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'image' => 'required',
 
         ]);
 
@@ -162,13 +160,21 @@ class ProductController extends Controller
 
         unset($request['category']);
         // dd($categories,$request->all());
+        $SpecialtyFields = json_encode($request->input('SpecialtyFields'));
+        if ($request->file('image')) {
+            $cover = $request->file('image');
 
-
-        $cover = $request->file('image');
-        $extension = $cover->getClientOriginalExtension() ? $cover->getClientOriginalExtension() : "";
-
-
-        $update = ['title' => $request->title, 'description' => $request->description, 'image' => $extension];
+            $update = ['title' => $request->title,
+                'description' => $request->description,
+                'image' => $cover->getClientOriginalExtension(),
+                'SpecialtyFields' => $SpecialtyFields
+            ];
+        } else {
+            $update = ['title' => $request->title,
+                'description' => $request->description,
+                'SpecialtyFields' => $SpecialtyFields
+            ];
+        }
         $product = Product::where('id', $id)->update($update);
         $where = array('id' => $id);
         $items = Product::where($where)->first();
@@ -177,8 +183,9 @@ class ProductController extends Controller
         //  dd($items);
 
 
-        if ($cover) {
-            $originalImage = $cover;
+        if ($request->file('image')) {
+            $extension = $request->file('image')->getClientOriginalExtension();
+            $originalImage = $request->file('image');
             $thumbnailImage = Image::make($originalImage);
             $thumbnailPath = public_path() . '/images/Products/';
             $thumbnailImage->resize(200, 200);
@@ -199,8 +206,8 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Product $product
-     * @return \Illuminate\Http\RedirectResponse
+     * @param Product $product
+     * @return RedirectResponse
      */
     public function destroy($productId)
     {

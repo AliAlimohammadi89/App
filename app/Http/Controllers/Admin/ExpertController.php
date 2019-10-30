@@ -79,10 +79,12 @@ class ExpertController extends Controller
 
 
         $resultCreate = Expert::create([
-            "title" => $request->title,
-            "description" => $request->description,
+            "First_Name" => $request->First_Name,
+            "Last_Name" => $request->Last_Name,
+            "Phone_Number" =>  $request->Phone_Number,
+            "Address" =>  $request->Address,
             "image" => $extension,
-            "price" => $request->price
+            "wallet" => $request->wallet
 
         ]);
 
@@ -152,9 +154,9 @@ class ExpertController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'title' => 'required',
-            'description' => 'required',
-            'image' => 'required',
+            'First_Name' => 'required',
+            'Last_Name' => 'required',
+            'Phone_Number' => 'required',
 
         ]);
 

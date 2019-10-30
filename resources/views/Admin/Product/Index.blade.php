@@ -12,13 +12,15 @@
                 <!-- /.card -->
 
                 <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Data Table With Full Features</h3>
-
+                    <div class="card-header row">
+                        <h3 class="card-title"> لیست خدمات </h3>
+                        <div class="col-md-2">
                         <a href="{{ route('Products.create') }}">
 
                             <button type="button" class="btn btn-primary btn-lg">NEW</button>
                         </a>
+                        </div>
+                        <div class="col-md-5">
                         @if (session('success'))
                             <div class="alert alert-success alert-dismissible" style="
     height: 50px;
@@ -27,6 +29,7 @@
                                 <h5><i class="icon fa fa-check"></i> {{ session('success') }}</h5>
                             </div>
                         @endif
+                        </div>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
@@ -42,10 +45,8 @@
                             </tr>
                             </thead>
                             <tbody>
-
                             @foreach(\App\Product::all() as $k => $Product)
                                 <tr>
-
                                     <td>
                                         <div class="btn-group">
                                             <div class="btn-sm">@if ($k > 10 | $k == 0 ){{ $k }}@else{{ '0'.$k }}@endif</div>
@@ -97,6 +98,7 @@
                             </tbody>
                             <tfoot>
                             <tr>
+                                <th>-</th>
                                 <th>عنوان</th>
                                 <th>توضیحات</th>
                                 <th>تصویر</th>

@@ -76,50 +76,16 @@
 @endsection
 
 @section('scriptJs')
-    {{--     <script type="text/javascript" src="{{URL::asset('../TemplateAsset/plugins/jquery/jquery.min.js')}}"></script>--}}
-    <script type="text/javascript" src="{{URL::asset('TemplateAsset/plugins/jquery/jquery.min.js')}}')}}"></script>
+    <script type="text/javascript" src="{{URL::asset('TemplateAsset/plugins/jquery/jquery.min.js')}}"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 
-    <!-- Bootstrap 4 -->
-    <script type="text/javascript" src="{{URL::asset('TemplateAsset/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-    <!-- DataTables -->
-    <script type="text/javascript" src="{{URL::asset('TemplateAsset/plugins/datatables/jquery.dataTables.js')}}"></script>
-    <script type="text/javascript" src="{{URL::asset('TemplateAsset/plugins/datatables/dataTables.bootstrap4.js')}}"></script>
-    <!-- SlimScroll -->
-    <script type="text/javascript" src="{{URL::asset('TemplateAsset/plugins/slimScroll/jquery.slimscroll.min.js')}}"></script>
-    <!-- FastClick -->
-    <script type="text/javascript" src="{{URL::asset('TemplateAsset/plugins/fastclick/fastclick.js')}}"></script>
-    <!-- AdminLTE App -->
-    <script type="text/javascript" src="{{URL::asset('TemplateAsset/dist/js/adminlte.min.js')}}"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script type="text/javascript" src="{{URL::asset('TemplateAsset/dist/js/demo.js')}}"></script>
-    <!-- page script -->
-    <script>
-        $(function () {
-            $("#example1").DataTable({
-                "language": {
-                    "paginate": {
-                        "next": "بعدی",
-                        "previous": "قبلی"
-                    }
-                },
-                "info": false,
-            });
-            $('#example2').DataTable({
-                "language": {
-                    "paginate": {
-                        "next": "بعدی",
-                        "previous": "قبلی"
-                    }
-                },
-                "info": false,
-                "paging": true,
-                "lengthChange": false,
-                "searching": false,
-                "ordering": true,
-                "autoWidth": false
-            });
-        });
-    </script>
+    <script src="{{URL::asset('TemplateAsset/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
+    <script src="{{URL::asset('TemplateAsset/plugins/datepicker/bootstrap-datepicker.js')}}"></script>
+    <!-- Bootstrap WYSIHTML5 -->
+
+    <script src="{{URL::asset('TemplateAsset/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js')}}"></script>
+    <!-- Slimscroll -->
 
 @endsection
 
