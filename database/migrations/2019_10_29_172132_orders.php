@@ -15,26 +15,32 @@ class Orders extends Migration
     {
         Schema::create('Orders', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('Customer_id')->unsigned();
-            $table->foreign('Customer_id')
-                ->references('id')->on('Customers');
+            $table->unsignedInteger('Customer_id')->comment('Relation to Customer Table');
 
-            $table->integer('Expert_id')->unsigned()->nullable();
+            $table->foreign('Customer_id')->references('id')->on('Customers');
+
+
+//            $table->foreign('Customer_id')
+//                ->references('id')->on('Customers');
+
+            $table->integer('Expert_id')->unsigned()->nullable()->comment('Relation To Expert Table');
             $table->foreign('Expert_id')
                 ->references('id')->on('Experts');
 
-        $table->integer('product_id')->unsigned()->nullable();
+            $table->integer('product_id')->unsigned()->nullable()->comment('Relation to Product Table');
             $table->foreign('product_id')
                 ->references('id')->on('products');
 
 
-            $table->string('title')->comment('order title for create table test')	;
+            $table->string('title')->comment('Order Title');
 
-            $table->string('description');
-            $table->string('image');
-            $table->string('price');
+            $table->string('description')->comment('More Order Information');
+            $table->string('image')->comment('Image For problem Or simple Service');
+            $table->string('price')->comment('Final agreed price');
+            $table->integer('status')->comment('0 => Just Request from Customer , 1 => Accept form Expert but not to do, 2 => down from Expert  ');
+            $table->timestamp('serviceTime')->comment('Suggested time to get services');
             $table->timestamps();
-            $table->jsonb('SpecialtyFields')->nullable();
+            $table->text('SpecialtyFields')->nullable()->comment('SpecialtyFields Form Product Table (Title=>Value)');
 
 
         });

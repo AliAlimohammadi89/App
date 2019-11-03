@@ -39,7 +39,7 @@
                                 <th>شماره</th>
                                 <th>تصویر</th>
                                 <th>مجموعه ها</th>
-                                <th>امتیاز</th>
+                                <th>تاریخ ایجاد</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -95,7 +95,7 @@
 
 
                                     </td>
-                                    <td>X</td>
+                                    <td class="time-list-view"><?PHP $v = verta($Expert->created_at);$v->timezone = 'Asia/Tehran';print $v;?></td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -107,7 +107,7 @@
                                 <th>شماره</th>
                                 <th>تصویر</th>
                                 <th>مجموعه ها</th>
-                                <th>امتیاز</th>
+                                <th>تاریخ ایجاد</th>
                             </tr>
                             </tfoot>
                         </table>

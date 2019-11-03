@@ -228,6 +228,16 @@
                             </a>
                         </li>
 
+         <li class="nav-item">
+                            <a href="{{ route('Orders.index') }}" class="nav-link">
+                                <i class="fas fa-users"></i>
+                                <p>
+                                    سفارشات
+
+                                </p>
+                            </a>
+                        </li>
+
 
                     </ul>
                 </nav>

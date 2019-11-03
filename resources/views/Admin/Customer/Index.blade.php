@@ -41,7 +41,7 @@
                                 <th>فامیلی</th>
                                 <th>شماره</th>
                                 <th>ایمیل</th>
-                                <th>امتیاز</th>
+                                <th>تاریخ ایجاد</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -93,7 +93,10 @@
 
 
                                     </td>
-                                    <td>X</td>
+                                    <td class="time-list-view"><?PHP $v = verta($Customer->created_at);$v->timezone = 'Asia/Tehran';print $v;?></td>
+                                    <td>
+
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -104,7 +107,7 @@
                                 <th>فامیلی</th>
                                 <th>شماره</th>
                                 <th>ایمیل</th>
-                                <th>امتیاز</th>
+                                <th>تاریخ ایجاد</th>
                             </tr>
                             </tfoot>
                         </table>

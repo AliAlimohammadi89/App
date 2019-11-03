@@ -22,7 +22,9 @@ class CreateProductsTable extends Migration
             $table->string('image');
 //            $table->string('price');
             $table->timestamps();
-            $table->jsonb('SpecialtyFields')->nullable();
+
+
+            $table->text('SpecialtyFields')->nullable();
 
 
 

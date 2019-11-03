@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Product;
+use App\Order;
 use Hekmatinasser\Verta\Verta;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Redirect;
 use Intervention\Image\Facades\Image;
 
 
-class ProductController extends Controller
+class OrderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -22,7 +22,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('Admin.Product.Index');
+        return view('Admin.Order.Index');
 
     }
 
@@ -33,7 +33,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('Admin.Product.Create');
+        return view('Admin.Order.Create');
     }
 
     /**
@@ -59,7 +59,7 @@ class ProductController extends Controller
 //
 //
 //
-//        $product = Product::create($request->all());
+//        $product = Order::create($request->all());
 //
 //        dd($product);
 //
@@ -82,7 +82,7 @@ class ProductController extends Controller
         $extension = $cover->getClientOriginalExtension() ? $cover->getClientOriginalExtension() : "";
 
         $SpecialtyFields = json_encode($request->input('SpecialtyFields'));
-        $resultCreate = Product::create([
+        $resultCreate = Order::create([
             "title" => $request->title,
             "description" => $request->description,
             "image" => $extension,
@@ -96,17 +96,17 @@ class ProductController extends Controller
         if ($cover) {
             $originalImage = $cover;
             $thumbnailImage = Image::make($originalImage);
-            $thumbnailPath = public_path() . '/images/Products/';
+            $thumbnailPath = public_path() . '/images/Orders/';
             $thumbnailImage->resize(200, 200);
-            $thumbnailImage->save($thumbnailPath . 'Product_' . $resultCreate->id . '.' . $extension);
+            $thumbnailImage->save($thumbnailPath . 'Order_' . $resultCreate->id . '.' . $extension);
 //            dd($originalImage, $thumbnailImage);
 //            $p = Storage::disk('public')->put('/images2/category_' . $resultCreate->id . '.' . $extension, File::get($cover));
             //  dd($request->all());
         }
 
 
-        // return redirect(Route('Product'));
-        return Redirect::to('Products')
+        // return redirect(Route('Order'));
+        return Redirect::to('Orders')
             ->with('success', 'اطلاعات با موفقیت ثبت شد ');
         //
     }
@@ -114,10 +114,10 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param Product $product
+     * @param Order $product
      * @return Response
      */
-    public function show(Product $product)
+    public function show(Order $product)
     {
         //
     }
@@ -133,7 +133,7 @@ class ProductController extends Controller
 
 
         $where = array('id' => $categoryID);
-        $items = Product::where($where)->first();
+        $items = Order::where($where)->first();
 
 //        return view('Admin/Category.edit', $data);
 
@@ -141,8 +141,8 @@ class ProductController extends Controller
 //        dd($items);
 
 
-        return view('Admin/Product/Edit', [
-            'Product_data' => $items
+        return view('Admin/Order/Edit', [
+            'Order_data' => $items
         ]);
     }
 
@@ -150,7 +150,7 @@ class ProductController extends Controller
      * Update the specified resource in storage.
      *
      * @param Request $request
-     * @param Product $product
+     * @param Order $product
      * @return RedirectResponse
      */
     public function update(Request $request, $id)
@@ -180,9 +180,9 @@ class ProductController extends Controller
                 'SpecialtyFields' => $SpecialtyFields
             ];
         }
-        $product = Product::where('id', $id)->update($update);
+        $product = Order::where('id', $id)->update($update);
         $where = array('id' => $id);
-        $items = Product::where($where)->first();
+        $items = Order::where($where)->first();
         $items->categories()->sync($categories);
 
         //  dd($items);
@@ -192,16 +192,16 @@ class ProductController extends Controller
             $extension = $request->file('image')->getClientOriginalExtension();
             $originalImage = $request->file('image');
             $thumbnailImage = Image::make($originalImage);
-            $thumbnailPath = public_path() . '/images/Products/';
+            $thumbnailPath = public_path() . '/images/Orders/';
             $thumbnailImage->resize(200, 200);
-            $thumbnailImage->save($thumbnailPath . 'Product_' . $id . '.' . $extension);
+            $thumbnailImage->save($thumbnailPath . 'Order_' . $id . '.' . $extension);
 //            dd($originalImage, $thumbnailImage);
 //            $p = Storage::disk('public')->put('/images2/category_' . $resultCreate->id . '.' . $extension, File::get($cover));
             //  dd($request->all());
         }
 
 
-        return Redirect::to('Products')
+        return Redirect::to('Orders')
             ->with('success', 'اطلاعات با موفقیت ثبت شد ');
 
 
@@ -211,21 +211,21 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param Product $product
+     * @param Order $product
      * @return RedirectResponse
      */
     public function destroy($productId)
     {
         //  $thumbnailPath = 'D:\reeact-native\LaravelReact-native\reactproject\public\images';
 
-        $Product = Product::find($productId);
+        $Order = Order::find($productId);
 
-        $Product->categories()->detach();
+        $Order->categories()->detach();
 
-        $result = Product::where('id', $productId)->delete();
+        $result = Order::where('id', $productId)->delete();
 
 
-        $thumbnailPath = public_path() . '/images/Products/' . 'Product_' . $productId . '.' . $Product->image;
+        $thumbnailPath = public_path() . '/images/Orders/' . 'Order_' . $productId . '.' . $Order->image;
 
 
         File::delete($thumbnailPath);
@@ -239,7 +239,7 @@ class ProductController extends Controller
         //   dd($result);
 
 
-        return Redirect::to('Products')
+        return Redirect::to('Orders')
             ->with('success', 'اطلاعات با هذف شد ');
     }
 }

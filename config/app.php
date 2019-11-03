@@ -161,6 +161,10 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        Hekmatinasser\Verta\VertaServiceProvider::class,
+        Ipecompany\Smsirlaravel\SmsirlaravelServiceProvider::class,
+
+
 
 
         /*
@@ -227,7 +231,10 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Image' => 'Intervention\Image\Facades\Image',
+        'Verta' => Hekmatinasser\Verta\Verta::class,
+        'Smsirlaravel' => Ipecompany\Smsirlaravel\SmsirlaravelFacade::class,
 
     ],
+
 
 ];
