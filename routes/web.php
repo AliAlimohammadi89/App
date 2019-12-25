@@ -30,6 +30,8 @@ Route::resource('Products', 'Admin\ProductController');
 Route::resource('Experts', 'Admin\ExpertController');
 Route::resource('Customers', 'Admin\CustomerController');
 Route::resource('Orders', 'Admin\OrderController');
+Route::resource('Orders', 'Admin\OrderController');
+Route::resource('Sms', 'Admin\SmsmessageController');
  //Route::get('Admin/Category/Store', 'Admin\CategoryController@store')->name('CategoryStore');
 //Route::get('/Product', 'Admin\ProductController@index')->name('Product');
 //Route::get('Admin/Product/Create', 'Admin\ProductController@create')->name('ProductCreate');
