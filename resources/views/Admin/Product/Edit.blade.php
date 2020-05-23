@@ -77,6 +77,14 @@
                                     </div>
                                 </div>
 
+
+                                <div class="form-group">
+                                    <label>
+                                         <input type="checkbox" <?PHP if ($Product_data->Special == 1 ) echo 'checked' ?>    name="Special" class="flat-red">
+                                        خدمات ویژه
+                                    </label>
+                                </div>
+
                             </div>
                             <!-- /.card-body -->
 
@@ -103,8 +111,11 @@
                         <div class="card-body">
                             <ul class="todo-list">
                               <?PHP
-                                if($Product_data->SpecialtyFields){
-                                $SpecialtyFields =json_decode($Product_data->SpecialtyFields);
+                                if($Product_data->SpecialtyFields != "null"){
+                                 $SpecialtyFields =json_decode($Product_data->SpecialtyFields);
+
+
+
                                  foreach ($SpecialtyFields as $Key => $Value){
                                 ?>
 

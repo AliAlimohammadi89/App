@@ -2,10 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="944d1627-10d0-4f88-a00f-5ca1438c578b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/Admin/Smsmessage/Create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Admin/Smsmessage/Edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Admin/Smsmessage/Index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Site/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Site/js/War3TFT_127b_English.exe.opdownload" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Site/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Site/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Site/publicItems.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/PaymentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/PaymentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_10_16_144858_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_16_144858_create_products_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Product/Create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Product/Create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Product/Edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Product/Edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Product/Index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Product/Index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/PublicItems.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/PublicItems.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -139,27 +150,30 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1S17gFyzpPa2nK0r0uHo5PfFmBJ" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Template/PersianAdminLTE/pages/forms/advanced.html" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/Site/js" />
     <property name="nodejs_package_manager_path" value="yarn" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\reeact-native\LaravelReact-native\reactproject\app\Http\Controllers\Api" />
+      <recent name="D:\reeact-native\LaravelReact-native\reactproject\app\Http\Controllers\Site3" />
+      <recent name="D:\reeact-native\LaravelReact-native\reactproject\app\Http\Controllers" />
+      <recent name="D:\reeact-native\LaravelReact-native\reactproject\app\Http\Controllers\Site" />
+      <recent name="D:\reeact-native\LaravelReact-native\reactproject\public\images\Products" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\reeact-native\LaravelReact-native\reactproject\public\Site\js" />
+      <recent name="D:\reeact-native\LaravelReact-native\reactproject\public\Site\css" />
+      <recent name="D:\reeact-native\LaravelReact-native\reactproject\app\Http\Controllers\Site" />
       <recent name="D:\reeact-native\LaravelReact-native\reactproject\resources\views\Admin" />
       <recent name="D:\reeact-native\LaravelReact-native\reactproject\app" />
-      <recent name="D:\reeact-native\LaravelReact-native\reactproject\app\Http\Controllers\Admin" />
-      <recent name="D:\reeact-native\LaravelReact-native\reactproject\public\TemplateAsset\dist\js\pages" />
-      <recent name="D:\reeact-native\LaravelReact-native\reactproject\resources\views\Admin\Product" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\reeact-native\LaravelReact-native\reactproject\public\images\Products" />
-      <recent name="D:\reeact-native\LaravelReact-native\reactproject\public\images" />
-      <recent name="D:\reeact-native\LaravelReact-native\reactproject\storage\app\public\images2" />
-      <recent name="D:\reeact-native\LaravelReact-native\reactproject\resources\views\Admin" />
-      <recent name="D:\reeact-native\LaravelReact-native\reactproject\resources\views" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -196,6 +210,16 @@
       <workItem from="1571403573197" duration="66921000" />
       <workItem from="1572028202434" duration="62374000" />
       <workItem from="1576769161383" duration="7707000" />
+      <workItem from="1578813283046" duration="14642000" />
+      <workItem from="1580141966323" duration="320000" />
+      <workItem from="1580796876199" duration="951000" />
+      <workItem from="1580887130643" duration="3227000" />
+      <workItem from="1583056797603" duration="1169000" />
+      <workItem from="1583417604812" duration="7994000" />
+      <workItem from="1583941899736" duration="2147000" />
+      <workItem from="1584192557402" duration="9306000" />
+      <workItem from="1584283056329" duration="4708000" />
+      <workItem from="1585062059673" duration="8920000" />
     </task>
     <servers />
   </component>
@@ -214,5 +238,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

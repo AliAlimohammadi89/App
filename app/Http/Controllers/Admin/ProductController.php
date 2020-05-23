@@ -82,11 +82,17 @@ class ProductController extends Controller
         $extension = $cover->getClientOriginalExtension() ? $cover->getClientOriginalExtension() : "";
 
         $SpecialtyFields = json_encode($request->input('SpecialtyFields'));
+             if($request->Special == null)
+                $Special = 0;
+            else
+                $Special = 1;
+
         $resultCreate = Product::create([
             "title" => $request->title,
             "description" => $request->description,
             "image" => $extension,
             "SpecialtyFields" => $SpecialtyFields,
+            "Special" => $Special,
 
 
         ]);
@@ -166,18 +172,29 @@ class ProductController extends Controller
         unset($request['category']);
         // dd($categories,$request->all());
         $SpecialtyFields = json_encode($request->input('SpecialtyFields'));
+
+              if($request->Special == null)
+                 $Special = 0;
+             else
+                 $Special = 1;
+
+
+
         if ($request->file('image')) {
             $cover = $request->file('image');
 
             $update = ['title' => $request->title,
                 'description' => $request->description,
                 'image' => $cover->getClientOriginalExtension(),
-                'SpecialtyFields' => $SpecialtyFields
+                'SpecialtyFields' => $SpecialtyFields,
+                'Special' => $Special
             ];
         } else {
             $update = ['title' => $request->title,
                 'description' => $request->description,
-                'SpecialtyFields' => $SpecialtyFields
+                'SpecialtyFields' => $SpecialtyFields,
+                'Special' => $Special
+
             ];
         }
         $product = Product::where('id', $id)->update($update);

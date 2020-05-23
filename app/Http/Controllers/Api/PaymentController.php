@@ -15,7 +15,7 @@ class PaymentController extends Controller
     public function payment()
     {
         // validation
-        $this->validate(request() , [
+        $this->validate(request(), [
             'product_id' => 'required',
         ]);
 
@@ -48,7 +48,7 @@ class PaymentController extends Controller
                 'product_id' => $product->id
             ]);
 
-            return redirect('https://www.zarinpal.com/pg/StartPay/'.$result->Authority);
+            return redirect('https://www.zarinpal.com/pg/StartPay/' . $result->Authority);
         } else {
             echo 'ERR: ' . $result->Status;
         }
@@ -73,11 +73,11 @@ class PaymentController extends Controller
             );
 
             if ($result->Status == 100) {
-                if($this->PaymentRegistration($payment)) {
+                if ($this->PaymentRegistration($payment)) {
                     return "<div style=''>با تشکر عملیات مورد نظر با موفقیت انجام شد</div> ";
                 }
             } else {
-                echo 'Transaction failed. Status:'.$result->Status;
+                echo 'Transaction failed. Status:' . $result->Status;
             }
         } else {
             echo 'Transaction canceled by user';

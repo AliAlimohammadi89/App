@@ -20,7 +20,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('/Admin', 'Admin\PanelController@index')->name('home')->middleware('auth');
-Route::get('/Admin', 'Admin\PanelController@index')->name('home') ;
+Route::get('/Admin', 'Admin\PanelController@index')->name('home');
 //Route::get('/Category', 'Admin\CategoryController@index')->name('Category');
 //Route::get('Admin/Category/Create', 'Admin\CategoryController@create')->name('CategoryCreate');
 //Route::get('Admin/Category/Create', 'Admin\CategoryController@Edit')->name('CategoryEdit');
@@ -32,7 +32,16 @@ Route::resource('Customers', 'Admin\CustomerController');
 Route::resource('Orders', 'Admin\OrderController');
 Route::resource('Orders', 'Admin\OrderController');
 Route::resource('Sms', 'Admin\SmsmessageController');
- //Route::get('Admin/Category/Store', 'Admin\CategoryController@store')->name('CategoryStore');
+
+///////////////////////////////////////////////////////////////site
+
+//Route::get('Site', 'Site\HomeController2@index');
+Route::get('/Site1', 'SiteHomeController@Index');
+
+//Route::get('foo', 'Phtos\AdminController@method');
+
+
+//Route::get('Admin/Category/Store', 'Admin\CategoryController@store')->name('CategoryStore');
 //Route::get('/Product', 'Admin\ProductController@index')->name('Product');
 //Route::get('Admin/Product/Create', 'Admin\ProductController@create')->name('ProductCreate');
 //Route::post('Admin/Product/Store', 'Admin\ProductController@store')->name('ProductStore');

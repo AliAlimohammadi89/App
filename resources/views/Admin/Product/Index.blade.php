@@ -45,7 +45,8 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach(\App\Product::all() as $k => $Product)
+
+                             @foreach(\App\Product::all() as $k => $Product)
                                 <tr>
                                     <td>
                                         <div class="btn-group">

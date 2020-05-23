@@ -63,6 +63,13 @@
                                     </div>
                                 </div>
 
+                                <div class="form-group">
+                                    <label>
+                                        <input type="checkbox" name="Special" class="flat-red">
+                                        خدمات ویژه
+                                    </label>
+                                </div>
+
                             </div>
                             <!-- /.card-body -->
 
@@ -141,6 +148,13 @@
 
 
 
+    <script src="{{URL::asset('TemplateAsset/plugins/iCheck/icheck.min.js')}}"></script>
+
+
+
+
+
+
     <script src="{{URL::asset('TemplateAsset/plugins/datepicker/bootstrap-datepicker.js')}}"></script>
     <!-- Bootstrap WYSIHTML5 -->
 
@@ -172,8 +186,15 @@
     <!-- Ionicons -->
     <!-- DataTables -->
     <link rel="stylesheet" href="{{URL::asset('TemplateAsset/plugins/datatables/dataTables.bootstrap4.css')}}">
+
+
+
+    <link rel="stylesheet" href="{{URL::asset('TemplateAsset/plugins/iCheck/flat/green.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{URL::asset('TemplateAsset/dist/css/adminlte.min.css')}}">
+
+
+
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
@@ -181,6 +202,11 @@
     <link rel="stylesheet" href="{{URL::asset('TemplateAsset/dist/css/bootstrap-rtl.min.css')}}">
     <!-- template rtl version -->
     <link rel="stylesheet" href="{{URL::asset('TemplateAsset/dist/css/custom-style.css')}}">
+
+
+
+
+
 
 
     <script type="text/javascript">
