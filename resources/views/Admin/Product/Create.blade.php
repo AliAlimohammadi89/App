@@ -94,6 +94,17 @@
 
                             </div>
                             <!-- /.card-header -->
+                            <div class="card-footer clearfix">
+                                <button type="button" onclick="Add(1)" class="btn btn-info float-right"><i
+                                        class="fa fa-plus"></i>سوال جدید
+                                </button>
+                                <button type="button" onclick="Add(2)" class="btn btn-info  align-middle "><i
+                                        class="fa fa-plus"></i>  تصویر جدید
+                                </button>
+                                <button type="button" onclick="Add(3)" class="btn btn-info float-left "><i
+                                        class="fa fa-plus"></i>پرسش و پاسخ
+                                </button>
+                            </div>
                             <div class="card-body">
                                 <ul class="todo-list">
                                     {{--                                <li id="1">--}}
@@ -115,11 +126,7 @@
                                 </ul>
                             </div>
                             <!-- /.card-body -->
-                            <div class="card-footer clearfix">
-                                <button type="button" onclick="Add()" class="btn btn-info float-right"><i
-                                        class="fa fa-plus"></i> جدید
-                                </button>
-                            </div>
+
                         </div>
                         <!-- /.card -->
                     </div>
@@ -210,17 +217,33 @@
 
 
     <script type="text/javascript">
-
-        function Add() {
-
-            var number = Math.round(Math.random() * 10000);
-            $(".todo-list").append(
-                `<li id='${number}'><span class="handle"> <i class="fa fa-ellipsis-v"></i> <i class="fa fa-ellipsis-v"></i>  </span><input type="checkbox" value="" name=""><span class="text"><input type="text" value="پرسش ${number}"  name="SpecialtyFields[]"></span><div class="tools"><i style="margin-top: 4px" class="fas fa-trash" onclick="DeleteItem(${number})"></i> </div> </li>`
-            );
+         var i = 0 ;
+        function Add(type) {
+            if (type == 1) {
+                var number = Math.round(Math.random() * 10000);
+                $(".todo-list").append(
+                    `<li id='${number}'><span class="handle"> <i class="fa fa-ellipsis-v"></i> <i class="fa fa-ellipsis-v"></i>  </span><input type="checkbox" value="" name=""><span class="text"><input type="text" value="پرسش ${number}"  name="SpecialtyFields[1][]"></span><div class="tools"><i style="margin-top: 4px" class="fas fa-trash" onclick="DeleteItem(${number})"></i> </div> </li>`
+                );
+            } else if (type == 2) {
+                var number = Math.round(Math.random() * 10000);
+                $(".todo-list").append(
+                    `<li id='${number}'><span class="handle"> <i class="fa fa-ellipsis-v"></i> <i class="fa fa-ellipsis-v"></i>  </span><input type="checkbox" value="" name=""><span class="text"><input type="text" value="عنوان تصویر ${number}"  name="SpecialtyFields[2][]"></span><div class="tools"><i style="margin-top: 4px" class="fas fa-trash" onclick="DeleteItem(${number})"></i> </div> </li>`
+                );
+            } else {
+                var number = Math.round(Math.random() * 10000);
+                $(".todo-list").append(
+                    `<li id='${number}'><span class="handle"> <i class="fa fa-ellipsis-v"></i> <i class="fa fa-ellipsis-v"></i>  </span><input type="checkbox" value="" name=""><span class="text">
+<input type="text" value="عنوان سوال  ${number}"  name="SpecialtyFields[3][${i}][]">
+<input type="text" value="گذینه 1  ${number}"  name="SpecialtyFields[3][${i}][]">
+<input type="text" value="گذینه 2  ${number}"  name="SpecialtyFields[3][${i}][]">
+</span><div class="tools"><i style="margin-top: 4px" class="fas fa-trash" onclick="DeleteItem(${number})"></i> </div> </li>`
+                );
+                i++;
+            }
         }
+         function DeleteItem(item) {
+             $(`#${item}`).remove();
+         }
 
-        function DeleteItem(item) {
-            $(`#${item}`).remove();
-        }
     </script>
 @endsection

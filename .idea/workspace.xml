@@ -2,21 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="944d1627-10d0-4f88-a00f-5ca1438c578b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/Site/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Site/js/War3TFT_127b_English.exe.opdownload" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Site/js/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Site/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Site/publicItems.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/PaymentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/PaymentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_10_16_144858_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_16_144858_create_products_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Admin/Product/Create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Product/Create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Admin/Product/Edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Product/Edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Product/Index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Product/Index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/PublicItems.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/PublicItems.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -157,8 +147,9 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/Site/js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -220,6 +211,8 @@
       <workItem from="1584192557402" duration="9306000" />
       <workItem from="1584283056329" duration="4708000" />
       <workItem from="1585062059673" duration="8920000" />
+      <workItem from="1593004714803" duration="1314000" />
+      <workItem from="1593445490524" duration="20507000" />
     </task>
     <servers />
   </component>

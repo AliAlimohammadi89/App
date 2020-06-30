@@ -82,6 +82,15 @@ class ProductController extends Controller
         $extension = $cover->getClientOriginalExtension() ? $cover->getClientOriginalExtension() : "";
 
         $SpecialtyFields = json_encode($request->input('SpecialtyFields'));
+//        $SpecialtyFields .= json_encode($request->input('SpecialtyFields_pic'));
+//        $SpecialtyFields .= json_encode($request->input('SpecialtyFields_question'));
+
+
+
+//          dd($request->input('SpecialtyFields'));
+
+
+
              if($request->Special == null)
                 $Special = 0;
             else
@@ -173,6 +182,8 @@ class ProductController extends Controller
         // dd($categories,$request->all());
         $SpecialtyFields = json_encode($request->input('SpecialtyFields'));
 
+//         dd($request->input('SpecialtyFields'));
+
               if($request->Special == null)
                  $Special = 0;
              else
@@ -202,8 +213,7 @@ class ProductController extends Controller
         $items = Product::where($where)->first();
         $items->categories()->sync($categories);
 
-        //  dd($items);
-
+//          dd($update);
 
         if ($request->file('image')) {
             $extension = $request->file('image')->getClientOriginalExtension();

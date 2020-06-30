@@ -9,16 +9,16 @@
                   action="{{ route('Products.update', $Product_data->id) }}" name="update_product"
                   method="POST">
 
-            <div class="row">
+                <div class="row">
 
-                <div class="col-md-6">
-                    <!-- general form elements -->
-                    <div class="card card-primary">
-                        <div class="card-header">
-                            <h3 class="card-title">اضافه کردن خدمت</h3>
-                        </div>
-                        <!-- /.card-header -->
-                        <!-- form start -->
+                    <div class="col-md-6">
+                        <!-- general form elements -->
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">اضافه کردن خدمت</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <!-- form start -->
 
                             {{ csrf_field() }}
                             @method('PATCH')
@@ -80,7 +80,9 @@
 
                                 <div class="form-group">
                                     <label>
-                                         <input type="checkbox" <?PHP if ($Product_data->Special == 1 ) echo 'checked' ?>    name="Special" class="flat-red">
+                                        <input type="checkbox"
+                                               <?PHP if ($Product_data->Special == 1) echo 'checked' ?>    name="Special"
+                                               class="flat-red">
                                         خدمات ویژه
                                     </label>
                                 </div>
@@ -91,63 +93,110 @@
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-primary">ثبت</button>
                             </div>
-                    </div>
-                    <!-- /.card -->
-
-
-                </div>
-                <div class="col-md-6">
-                    <!-- TO DO List -->
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">
-                                <i class="ion ion-clipboard mr-1"></i>
-                                لیست اطلاعات تخصصی
-                            </h3>
-
-
                         </div>
-                        <!-- /.card-header -->
-                        <div class="card-body">
-                            <ul class="todo-list">
-                              <?PHP
-                                if($Product_data->SpecialtyFields != "null"){
-                                 $SpecialtyFields =json_decode($Product_data->SpecialtyFields);
+                        <!-- /.card -->
 
 
+                    </div>
+                    <div class="col-md-6">
+                        <!-- TO DO List -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">
+                                    <i class="ion ion-clipboard mr-1"></i>
+                                    لیست اطلاعات تخصصی
+                                </h3>
 
-                                 foreach ($SpecialtyFields as $Key => $Value){
-                                ?>
 
-                                                                <li id="{{$Key}}">
-                                                                    <!-- drag handle -->
-                                                                    <span class="handle">
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-footer clearfix">
+                                <button type="button" onclick="Add(1)" class="btn btn-info float-right"><i
+                                        class="fa fa-plus"></i>سوال جدید
+                                </button>
+                                <button type="button" onclick="Add(2)" class="btn btn-info  align-middle "><i
+                                        class="fa fa-plus"></i> تصویر جدید
+                                </button>
+                                <button type="button" onclick="Add(3)" class="btn btn-info float-left "><i
+                                        class="fa fa-plus"></i>پرسش و پاسخ
+                                </button>
+                            </div>
+                            <div class="card-body">
+
+                                <ul class="todo-list">
+                                    <?PHP
+                                    if($Product_data->SpecialtyFields != "null"){
+                                    $SpecialtyFields = json_decode($Product_data->SpecialtyFields);
+                                    //                                            dd($SpecialtyFields);
+                                    ?>
+
+
+                                    @foreach ($SpecialtyFields as $Key => $Value)
+
+
+                                        @foreach($Value as $key_val => $Val_Val)
+                                            @if($Key == 1 || $Key == 2 )
+                                                <li id="{{$Key}}{{$key_val}}">
+                                                    <!-- drag handle -->
+                                                    <span class="handle">
                                                                       <i class="fa fa-ellipsis-v"></i>
                                                                       <i class="fa fa-ellipsis-v"></i>
                                                                     </span>
-                                                                    <!-- checkbox -->
-                                                                    <input type="checkbox" value="" name="">
-                                                                    <!-- todo text -->
-                                                                    <span class="text"><input type="text" value="{{$Value}}" name="SpecialtyFields[]"></span>
-                                                                    <!-- Emphasis label -->
-                                                                     <!-- General tools such as edit or delete-->
-                                                                    <div class="tools">
-                                                                        <i style="margin-top: 4px" class="fas fa-trash" onclick="DeleteItem({{$Key}})"></i>
-                                                                    </div>
-                                                                </li>
-                                <?PHP } }?>
-                            </ul>
-                        </div>
-                        <!-- /.card-body -->
-                        <div class="card-footer clearfix">
-                            <button type="button"  onclick="Add()" class="btn btn-info float-right"><i class="fa fa-plus"></i> جدید
-                            </button>
-                        </div>
-                    </div>
-                    <!-- /.card -->
-                </div>
+                                                    <!-- checkbox -->
+                                                    <input type="checkbox" value="" name="">
+                                                    <!-- todo text -->
+                                                    <span class="text"><input type="text" value="{{$Val_Val}}"
+                                                                              name="SpecialtyFields[{{$Key}}][]"></span>
+                                                    <!-- Emphasis label -->
+                                                    <!-- General tools such as edit or delete-->
+                                                    <div class="tools">
+                                                        <i style="margin-top: 4px" class="fas fa-trash"
+                                                           onclick="DeleteItem({{$Key}}{{$key_val}})"></i>
+                                                    </div>
+                                                </li>
+                                            @endif
+                                            @if($Key == 3)
+                                                {{$Key}}
+                                                <li id="{{$Key}}{{$key_val}}">
+                                                    <!-- drag handle -->
+                                                    <span class="handle">
+                                                                      <i class="fa fa-ellipsis-v"></i>
+                                                                      <i class="fa fa-ellipsis-v"></i>
+                                                                    </span>
+                                                    <!-- checkbox -->
+                                                    <input type="checkbox" value="" name="">
+                                                    <!-- todo text -->
+                                                    <span class="text">
+                                                                <input type="text" value="{{$Val_Val[0]}}"
+                                                                       name="SpecialtyFields[3][{{$key_val}}][]">
+                                                                <input type="text" value="{{$Val_Val[1]}}"
+                                                                       name="SpecialtyFields[3][{{$key_val}}][]">
+                                                                <input type="text" value="{{$Val_Val[2]}}"
+                                                                       name="SpecialtyFields[3][{{$key_val}}][]">
+                                                            </span>
+                                                    <!-- Emphasis label -->
+                                                    <!-- General tools such as edit or delete-->
+                                                    <div class="tools">
+                                                        <i style="margin-top: 4px" class="fas fa-trash"
+                                                           onclick="DeleteItem({{$Key}}{{$key_val}})"></i>
+                                                    </div>
+                                                </li>
+                                            @endif
+                                        @endforeach
 
-            </div>
+                                    @endforeach
+
+
+                                    <?PHP  }?>
+                                </ul>
+                            </div>
+                            <!-- /.card-body -->
+
+                        </div>
+                        <!-- /.card -->
+                    </div>
+
+                </div>
 
             </form>
 
@@ -206,18 +255,55 @@
     <!-- template rtl version -->
     <link rel="stylesheet" href="{{URL::asset('TemplateAsset/dist/css/custom-style.css')}}">
 
+    {{--    <script type="text/javascript">--}}
+
+    {{--        function Add() {--}}
+
+    {{--            var number = Math.round(Math.random() * 10000);--}}
+    {{--            $(".todo-list").append(--}}
+    {{--                `<li id='${number}'><span class="handle"> <i class="fa fa-ellipsis-v"></i> <i class="fa fa-ellipsis-v"></i>  </span><input type="checkbox" value="" name=""><span class="text"><input type="text" value="پرسش ${number}"  name="SpecialtyFields[]"></span><div class="tools"><i style="margin-top: 4px" class="fas fa-trash" onclick="DeleteItem(${number})"></i> </div> </li>`--}}
+    {{--            );--}}
+    {{--        }--}}
+
+    {{--        function DeleteItem(item) {--}}
+    {{--            $(`#${item}`).remove();--}}
+    {{--        }--}}
+    {{--    </script>--}}
+
+
+
     <script type="text/javascript">
+        var i = 0;
 
-        function Add() {
+        function Add(type) {
+            if (type == 1) {
+                var number = Math.round(Math.random() * 10000);
+                $(".todo-list").append(
+                    `<li id='${number}'><span class="handle"> <i class="fa fa-ellipsis-v"></i> <i class="fa fa-ellipsis-v"></i>  </span><input type="checkbox" value="" name=""><span class="text"><input type="text" value="پرسش ${number}"  name="SpecialtyFields[1][]"></span><div class="tools"><i style="margin-top: 4px" class="fas fa-trash" onclick="DeleteItem(${number})"></i> </div> </li>`
+                );
+            } else if (type == 2) {
+                var number = Math.round(Math.random() * 10000);
+                $(".todo-list").append(
+                    `<li id='${number}'><span class="handle"> <i class="fa fa-ellipsis-v"></i> <i class="fa fa-ellipsis-v"></i>  </span><input type="checkbox" value="" name=""><span class="text"><input type="text" value="عنوان تصویر ${number}"  name="SpecialtyFields[2][]"></span><div class="tools"><i style="margin-top: 4px" class="fas fa-trash" onclick="DeleteItem(${number})"></i> </div> </li>`
+                );
+            } else {
+                var number = Math.round(Math.random() * 10000);
+                $(".todo-list").append(
+                    `<li id='${number}'><span class="handle"> <i class="fa fa-ellipsis-v"></i> <i class="fa fa-ellipsis-v"></i>  </span><input type="checkbox" value="" name=""><span class="text">
+<input type="text" value="عنوان سوال  ${number}"  name="SpecialtyFields[3][${i}][]">
+<input type="text" value="گذینه 1  ${number}"  name="SpecialtyFields[3][${i}][]">
+<input type="text" value="گذینه 2  ${number}"  name="SpecialtyFields[3][${i}][]">
+</span><div class="tools"><i style="margin-top: 4px" class="fas fa-trash" onclick="DeleteItem(${number})"></i> </div> </li>`
+                );
+                i++;
+            }
+        }
 
-            var number = Math.round(Math.random() * 10000) ;
-            $(".todo-list").append(
-                `<li id='${number}'><span class="handle"> <i class="fa fa-ellipsis-v"></i> <i class="fa fa-ellipsis-v"></i>  </span><input type="checkbox" value="" name=""><span class="text"><input type="text" value="پرسش ${number}"  name="SpecialtyFields[]"></span><div class="tools"><i style="margin-top: 4px" class="fas fa-trash" onclick="DeleteItem(${number})"></i> </div> </li>`
-            );
+        function DeleteItem(item) {
+            $(`#${item}`).remove();
         }
-        function DeleteItem (item){
-             $(`#${item}`).remove();
-        }
+
     </script>
+
 
 @endsection
