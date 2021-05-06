@@ -13,7 +13,7 @@
         "hekmatinasser/verta": "^1.10",
         "intervention/image": "^2.5",
         "ipecompany/smsirlaravel": "^1.0",
-        "laravel/framework": "6.2",
+        "laravel/framework": "6.18.43",
         "laravel/tinker": "^1.0"
     },
     "require-dev": {
